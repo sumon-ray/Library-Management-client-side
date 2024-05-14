@@ -46,7 +46,7 @@ const AllBooks = () => {
         </button>
       </div>
       {view === "card" ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-4">
           {filteredBooks.map((book) => (
             <AllBookDetails key={book._id} book={book} />
           ))}

@@ -32,7 +32,7 @@ const Update = () => {
         `https://server-pi-amber.vercel.app/singleData/${loader._id}`,
         updatedBook
       );
-      console.log(response.data);
+      // console.log(response.data);
       toast.success("Book updated successfully");
       navigate(-1); // Redirect to home page after successful update
     } catch (error) {

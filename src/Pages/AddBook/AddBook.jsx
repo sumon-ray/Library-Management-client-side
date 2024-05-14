@@ -8,7 +8,7 @@ const AddBook = () => {
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
   };
-
+   
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,7 +29,7 @@ const AddBook = () => {
       rating,
       category,
     };
-    // console.log(info);
+    console.log(info);
     const { data } = await axios.post(
       "https://server-pi-amber.vercel.app/books",
       info
@@ -39,93 +39,64 @@ const AddBook = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold text-center mb-4">Add New Book</h2>
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+    <section className=" my-8 max-w-4xl p-6 mx-auto bg-blue-100 rounded-md shadow-md dark:bg-gray-800">
+    <h2 className="text-2xl font-semibold text-gray-700  capitalize dark:text-white text-center mb-12 ">Add Book</h2>
+
+    <form onSubmit={handleSubmit}>
+    <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <div>
+            <label className="text-gray-700 dark:text-gray-200"    htmlFor="username"> Image URL:</label>
+            <input name="image" id="username" placeholder="place image url" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+        </div>
+
+        <div>
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="emailAddress">Name:</label>
+            <input placeholder="type book name " name="name" id="emailAddress" type="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+        </div>
+
+        <div>
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="password">Quantity</label>
+            <input placeholder="set book quantity" name="quantity" id="password" type="number" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+        </div>
+
+        <div>
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="authorName">Author Name:</label>
+            <input placeholder="Athor name " name="authorName" id="authorName" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+        </div>
+
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">
-            Image URL:
-          </label>
-          <input
-            type="text"
-            name="image"
-            className="input input-bordered"
-            placeholder="Enter image URL"
-          />
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="category">Category</label>
+            <select
+                name="category"
+                id="category"
+                className="block px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                value={category}
+                onChange={handleCategoryChange}
+            >
+                <option value="Arts & Music">Arts & Music</option>
+                <option value="Biographies">Biographies</option>
+                <option value="Cooking">Cooking</option>
+            </select>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">Name:</label>
-          <input
-            type="text"
-            name="name"
-            className="input input-bordered"
-            placeholder="Enter book name"
-          />
+
+        <div>
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="description">Description:</label>
+            <textarea placeholder="write details of the book" name="description" id="description" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">Quantity:</label>
-          <input
-            type="number"
-            name="quantity"
-            className="input input-bordered"
-            placeholder="Enter quantity"
-          />
+
+        <div>
+            <label className="text-gray-700 dark:text-gray-200" htmlFor="rating">Rating</label>
+            <input placeholder="rating (0-5)" name="rating" id="rating" type="number" min="0" max="5" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">
-            Author Name:
-          </label>
-          <input
-            type="text"
-            name="authorName"
-            className="input  input-bordered"
-            placeholder="Enter author name"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="text-gray-700" htmlFor="category">
-            Category
-          </label>
-          <select
-            name="category"
-            id="category"
-            className="border   text-gray-400 bg-slate-900 p-2 rounded-md"
-            value={category}
-            onChange={handleCategoryChange}
-          >
-            <option value="Arts & Music">Arts & Music</option>
-            <option value="Biographies">Biographies</option>
-            <option value="Cooking">Cooking</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">
-            Description:
-          </label>
-          <textarea
-            name="description"
-            className="textarea textarea-bordered"
-            placeholder="Enter description"
-          ></textarea>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">Rating:</label>
-          <input
-            type="number"
-            name="rating"
-            min="1"
-            max="5"
-            className="input input-bordered"
-            placeholder="Enter rating (1-5)"
-          />
-        </div>
-        <div className="col-span-2 flex justify-center mt-6">
-          <button type="submit" className="btn btn-primary">
-            Add Book
-          </button>
-        </div>
-      </form>
     </div>
+
+    <div className="flex justify-end mt-6">
+        <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add Book</button>
+    </div>
+</form>
+
+</section>
+
   );
 };
 
