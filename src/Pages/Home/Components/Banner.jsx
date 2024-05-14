@@ -75,7 +75,7 @@ export default function Banner() {
 //  
 // 
 // 
-// private route has been set up for private data.
+// 
 // error handling functionality has been added for both the login and register page 
 // 404 route has been setup. if user hit to a wrong way this page will be shown.
 //  added page has been added user can add book from this page as many as he want.
