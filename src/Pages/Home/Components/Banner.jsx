@@ -72,7 +72,7 @@ export default function Banner() {
 
 // 
 // 
-//  user can see the all added book in a card or a table view. 
+//  
 //  filtered book based on the quantity functionality has been implemented .
 // update functionality has been implemented for each book in the all book page.
 // private route has been set up for private data.
