@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-// import defaultImage from "../../../public/dessert_dandroid.png";
 import UseAuth from "../UseAuth/UseAuth";
 
 const Header = () => {
-  const { user, logOutUser } = UseAuth();
-  // console.log(user)
+  const { user, logOutUser,theme,setTheme } = UseAuth();
+  
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleChange = (e) => {
+    setTheme(e.target.checked ? "dracula" : "light");
+  };
   const navigate = useNavigate()
   const [showName, setShowName] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
 
   const handleMouseEnter = () => {
     setShowName(true);
@@ -19,7 +23,9 @@ const Header = () => {
   const handleMouseLeave = () => {
     setShowName(false);
   };
-//   https://i.ibb.co/GCN4Dkw/620-D48-DC0-BE8429-B9-B07306-F76592-D33206-AD6-C2.jpg
+// -------------------------------------------------------------
+
+
   const navbar = (
     <>
       <div className="lg:flex list-none gap-4">
@@ -44,14 +50,6 @@ const Header = () => {
     </>
   );
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const handleChange = (e) => {
-    setTheme(e.target.checked ? "dracula" : "light");
-  };
 
   return (
     <div className=''>

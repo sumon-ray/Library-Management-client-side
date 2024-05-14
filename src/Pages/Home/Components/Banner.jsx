@@ -41,13 +41,13 @@ export default function Banner() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide ><Slider image={image0} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image3} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image4} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image5} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image6} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image2} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image2} />  </SwiperSlide>
+        <SwiperSlide ><Slider image={image0} text={'only book is your friend '} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image3} text={''} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image4} text={''} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image5} text={''} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image6} text={''} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image2} text={''} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image2} text={''} />  </SwiperSlide>
 
         
   
@@ -56,3 +56,24 @@ export default function Banner() {
   );
 }
 
+
+
+
+
+
+
+// git commit 
+// responsive footer has been added
+// details book page has added for each category book
+// modal has been added. user can borrow the book now.
+// user can only borrow a single book for one time. this functionality has been added 
+// borrowed book page has been added where user can see their borrowed book list
+// all book page has been added. user can see all the added book.
+//  user can see the all added book in a card or a table view. 
+//  filtered book based on the quantity functionality has been implemented .
+// update functionality has been implemented for each book in the all book page.
+// private route has been set up for private data.
+// error handling functionality has been added for both the login and register page 
+// 404 route has been setup. if user hit to a wrong way this page will be shown.
+//  added page has been added user can add book from this page as many as he want.
+// 

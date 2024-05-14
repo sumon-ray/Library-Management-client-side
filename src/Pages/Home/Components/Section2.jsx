@@ -15,25 +15,25 @@ const Section2 = () => {
           <ul className="my-4">
             <li className="flex items-center gap-1">
               {" "}
-              <IoMdCheckmarkCircle /> Integration of all records of students
+              <IoMdCheckmarkCircle /> Discussion Room Facility
             </li>
             <li className="flex items-center gap-1">
               {" "}
               <IoMdCheckmarkCircle />
-              Manage the records systematically
+              borrowing-facility
             </li>
             <li className="flex items-center gap-1">
               <IoMdCheckmarkCircle />
-              It can track any information online
+              discussion-room-facility
             </li>
             <li className="flex items-center gap-1">
-              <IoMdCheckmarkCircle /> One can generate the reports
+              <IoMdCheckmarkCircle /> Reresource-lab-facility
             </li>
             <li className="flex items-center gap-1">
               <IoMdCheckmarkCircle /> Manage all information online
             </li>
             <li className="flex items-center gap-1">
-              <IoMdCheckmarkCircle /> Easy to maintain records
+              <IoMdCheckmarkCircle /> NewsPaper facility
             </li>
             <li className="flex items-center gap-1">
               <IoMdCheckmarkCircle /> It leads to fast book entry

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import UseAuth from "../../UseAuth/UseAuth";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 const Register = () => {
   const { registerUser } = UseAuth();
   const navigate = useNavigate();
@@ -48,11 +48,7 @@ const Register = () => {
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
           <form onSubmit={handleSubmit} className="w-full max-w-md">
             <div className="flex justify-center mx-auto">
-              <img
-                className="w-auto h-7 sm:h-8"
-                src="https://merakiui.com/images/logo.svg"
-                alt=""
-              />
+          <FaUserCircle className="text-blue-300 size-20 md:size-40" />
             </div>
 
             <div className="flex items-center justify-center mt-6">
@@ -107,6 +103,7 @@ const Register = () => {
                 name="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
+                required
               />
             </div>
 
@@ -116,6 +113,7 @@ const Register = () => {
                 name="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
+                required
               />
             </div>
 
@@ -129,14 +127,14 @@ const Register = () => {
                 Sign Up
               </button>
 
-              <div className="mt-6 text-center ">
+              <Link to='/login' className="mt-6 text-center ">
                 <a
                   href="#"
                   className="text-sm text-blue-500 hover:underline dark:text-blue-400"
                 >
-                  Already have an account?
+                  Already have an account? 
                 </a>
-              </div>
+              </Link>
             </div>
           </form>
         </div>

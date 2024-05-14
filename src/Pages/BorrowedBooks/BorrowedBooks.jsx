@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import UseAuth from "../../UseAuth/UseAuth";
 import BorrowBooksDetails from "./BorrowBooksDetails";
+import Swal from "sweetalert2";
 
 const BorrowedBooks = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
@@ -11,12 +12,16 @@ const BorrowedBooks = () => {
       await axios.delete(`https://server-pi-amber.vercel.app/borrow/${id}`);
       const remaining = borrowedBooks.filter((book) => book._id !== id);
       setBorrowedBooks(remaining);
+      Swal.fire({
+        title: "Good job!",
+        text: " Book returned successfully",
+        icon: "success"
+      });
     } catch (error) {
       console.error("Error deleting book:", error);
     }
   };
 
-  // console.log(borrowedBooks)
   const { user } = UseAuth();
   useEffect(() => {
     const getAllData = async () => {
@@ -30,11 +35,8 @@ const BorrowedBooks = () => {
 
   return (
     <div>
-      length:{borrowedBooks.length}
+      Total Books: {borrowedBooks.length}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* {
-                borrowedBooks.map(books=><BorrowBooksDetails books={books} key={books._id} />)
-            } */}
         {borrowedBooks.map((item) => (
           <BorrowBooksDetails
             handleDelete={handleDelete}

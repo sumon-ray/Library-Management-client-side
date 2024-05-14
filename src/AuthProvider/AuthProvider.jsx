@@ -16,6 +16,9 @@ export const UserContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   // console.log(user)
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  )
   const [loading, setLoading] = useState(true);
   //registerUser==>
   const registerUser = (email,password) => {
@@ -77,6 +80,8 @@ const loginWithGoogle = () => {
     updateProfile,
     logOutUser,
     loginWithGoogle,
+    theme,
+    setTheme
   };
   return <UserContext.Provider value={info}>{children}</UserContext.Provider>;
 };

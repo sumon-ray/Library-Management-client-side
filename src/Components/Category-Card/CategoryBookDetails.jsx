@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import UseAuth from "../../UseAuth/UseAuth";
+import Swal from "sweetalert2";
 
 const CategoryBookDetails = () => {
   const { user } = UseAuth();
+  // console.log(user)
   const loader = useLoaderData();
   const { _id, image, name, authorName, description, category } = loader;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,14 +48,15 @@ const CategoryBookDetails = () => {
         borrowedBook
       );
 
-      toast.success("Book borrowed successfully");
+      Swal.fire({
+        title: "Good job!",
+        text: "Book borrowed successfully",
+        icon: "success"
+      });
       closeModal();
     } catch (error) {
-      if (error.response && error.response.status === 400) {
-        toast.error("You have already borrowed this book.");
-      } else {
-        toast.error("Failed to borrow book.");
-      }
+      toast.error("You have already borrowed this book.");
+     
     }
   };
   return (
@@ -119,9 +122,9 @@ const CategoryBookDetails = () => {
                 <input
                   type="email"
                   id="email"
-                  defaultValue={user?.email}
+                  defaultValue={user?.email || 'no user'}
                   name="borrowerEmail"
-                  className="text-white  mt-1 p-2 w-full border rounded-md"
+                  className="text-white   mt-1 p-2 w-full border rounded-md"
                   required
                 />
               </div>

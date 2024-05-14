@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const Update = () => {
     };
 
     try {
-      const response = await axios.put(
+      await axios.put(
         `https://server-pi-amber.vercel.app/singleData/${loader._id}`,
         updatedBook
       );
@@ -121,10 +121,9 @@ const Update = () => {
             <option value="Biographies">Biographies</option>
             <option value="Cooking">Cooking</option>
             <option value="Entertainment">Entertainment</option>
-            {/* Add more options as needed */}
           </select>
         </div>
-        <button type="submit" className="btn btn-primary w-full">
+        <button type="submit" className="btn text-gray-100 btn-primary w-full">
           Update
         </button>
       </form>
