@@ -78,5 +78,5 @@ export default function Banner() {
 // 
 // 
 // 
-//  added page has been added user can add book from this page as many as he want.
+//  
 // 
