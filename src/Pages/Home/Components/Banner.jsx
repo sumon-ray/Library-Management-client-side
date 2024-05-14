@@ -74,7 +74,7 @@ export default function Banner() {
 // 
 //  
 // 
-// update functionality has been implemented for each book in the all book page.
+// 
 // private route has been set up for private data.
 // error handling functionality has been added for both the login and register page 
 // 404 route has been setup. if user hit to a wrong way this page will be shown.
