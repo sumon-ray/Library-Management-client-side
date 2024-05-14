@@ -13,7 +13,9 @@ const AllBooks = () => {
   useEffect(() => {
     const getAllData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:1000/books");
+        const { data } = await axios.get(
+          "https://server-pi-amber.vercel.app/books"
+        );
         setBooks(data);
       } catch (error) {
         console.error("Error fetching books:", error);

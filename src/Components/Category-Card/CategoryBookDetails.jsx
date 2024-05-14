@@ -22,10 +22,10 @@ const CategoryBookDetails = () => {
     const userName = e.target.borrowerName.value;
     const userEmail = e.target.borrowerEmail.value;
     const returnBook = e.target.return.value;
-  
+
     // Access the book details from the loader
     const { _id, name, authorName, description, category, image } = loader;
-  
+
     // Create an object with the borrowed book details
     const borrowedBook = {
       bookId: _id,
@@ -38,11 +38,14 @@ const CategoryBookDetails = () => {
       userEmail: userEmail,
       returnDate: returnBook,
     };
-  
+
     try {
       // Make a POST request to send the borrowed book details to the backend
-      await axios.post("http://localhost:1000/borrow", borrowedBook);
-  
+      await axios.post(
+        "https://server-pi-amber.vercel.app/borrow",
+        borrowedBook
+      );
+
       toast.success("Book borrowed successfully");
       closeModal();
     } catch (error) {

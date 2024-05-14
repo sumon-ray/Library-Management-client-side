@@ -8,7 +8,7 @@ const BorrowedBooks = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1000/borrow/${id}`);
+      await axios.delete(`https://server-pi-amber.vercel.app/borrow/${id}`);
       const remaining = borrowedBooks.filter((book) => book._id !== id);
       setBorrowedBooks(remaining);
     } catch (error) {
@@ -21,7 +21,7 @@ const BorrowedBooks = () => {
   useEffect(() => {
     const getAllData = async () => {
       const { data } = await axios(
-        `http://localhost:1000/borrow/${user?.email}`
+        `https://server-pi-amber.vercel.app/borrow/${user?.email}`
       );
       setBorrowedBooks(data);
     };

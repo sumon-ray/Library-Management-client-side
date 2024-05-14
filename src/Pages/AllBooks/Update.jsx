@@ -29,7 +29,7 @@ const Update = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:1000/singleData/${loader._id}`,
+        `https://server-pi-amber.vercel.app/singleData/${loader._id}`,
         updatedBook
       );
       console.log(response.data);

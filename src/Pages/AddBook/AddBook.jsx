@@ -30,7 +30,10 @@ const AddBook = () => {
       category,
     };
     // console.log(info);
-    const { data } = await axios.post("http://localhost:1000/books", info);
+    const { data } = await axios.post(
+      "https://server-pi-amber.vercel.app/books",
+      info
+    );
     console.log(data);
     toast.success("added successfully");
   };

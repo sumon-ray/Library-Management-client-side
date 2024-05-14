@@ -10,7 +10,9 @@ const CategoryCard = () => {
   useEffect(() => {
     const getBooks = async () => {
       try {
-        const { data } = await axios.get("http://localhost:1000/books");
+        const { data } = await axios.get(
+          "https://server-pi-amber.vercel.app/books"
+        );
         setBooks(data);
         // console.log(data); // Add this line to check the fetched data
       } catch (error) {

@@ -43,9 +43,9 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <Update />,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/singleData/${params.id}`).then((res) =>
-            res.json()
-          ),
+          fetch(
+            `https://server-pi-amber.vercel.app/singleData/${params.id}`
+          ).then((res) => res.json()),
       },
 
       {
@@ -57,9 +57,9 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <CategoryBookDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:1000/singleData/${params.id}`).then((res) =>
-            res.json()
-          ),
+          fetch(
+            `https://server-pi-amber.vercel.app/singleData/${params.id}`
+          ).then((res) => res.json()),
       },
     ],
   },
