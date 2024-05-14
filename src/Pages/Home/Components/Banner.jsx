@@ -66,7 +66,8 @@ export default function Banner() {
 // 
 // 
 
-// modal has been added. user can borrow the book now.
+
+// 
 // user can only borrow a single book for one time. this functionality has been added 
 // borrowed book page has been added where user can see their borrowed book list
 // all book page has been added. user can see all the added book.
