@@ -68,7 +68,8 @@ export default function Banner() {
 
 
 // 
-// user can only borrow a single book for one time. this functionality has been added 
+// 
+
 // borrowed book page has been added where user can see their borrowed book list
 // all book page has been added. user can see all the added book.
 //  user can see the all added book in a card or a table view. 
