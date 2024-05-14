@@ -1,0 +1,147 @@
+[
+    {
+      "image": "https://i.ibb.co/GCN4Dkw/620-D48-DC0-BE8429-B9-B07306-F76592-D33206-AD6-C2.jpg",
+      "name": "The Artist's Way",
+      "authorName": "Julia Cameron",
+      "category": "Arts & Music",
+      "rating": 4.5,
+      "description": "She is the author of forty books, fiction and nonfiction, including her bestselling works on the creative process: The Artist's Way, Walking in This World and Finding Water. Her work has been translated into more than thirty-five languages and has sold more than four million copies worldwide.",
+      "quantity": 10
+    },
+    {
+      "image": "https://i.ibb.co/vcD2kSv/C83-C8-CA19-D4470834316058-D568-FE02-E8-F80536-A.jpg",
+      "name": "Harold and the Purple Crayon",
+      "authorName": "Crockett Johnson",
+      "category": "Arts & Music",
+      "rating": 4.2,
+      "description": "The protagonist, Harold, is a curious four-year-old boy who, with his magic purple crayon, has the power to create a world of his own simply by drawing it. Harold wants to go for a walk in the moonlight, but there is no moon, so he draws one. He has nowhere to walk, so he draws a path.",
+      "quantity": 5
+    },
+    {
+      "image": "https://i.ibb.co/qC30mp7/F52-D7994-A9396-C606-F8361-CFD1-A0-BAE1-BF76-A9-EA.jpg",
+      "name": "The One and Only Ivan: A Newbery Award Winner",
+      "authorName": "Katherine Applegate",
+      "category": "Arts & Music",
+      "rating": 4.8,
+      "description": "Inspired by the true story of a captive gorilla known as Ivan, this illustrated book is told from the point of view of Ivan himself. Having spent twenty-seven years behind the glass walls of his enclosure in a shopping mall, Ivan has grown accustomed to humans watching him.",
+      "quantity": 7
+    },
+    {
+      "image": "https://i.ibb.co/FqxgGjf/0038564-ACEBE7752-AC400-C74-E07-B8507721-C677-C.jpg",
+      "name": "A Survivor's Tale: My Father Bleeds History",
+      "authorName": "Art Spiegelman",
+      "category": "Arts & Music",
+      "rating": 4.0,
+      "description": "Maus tells the story of Vladek Spielgeman, a Jewish survivor of the Holocaust. His son, Art Spiegelman, is an illustrator and wants to write the story of his father's experiences during World War II. The story is also of Art himself, the interviews and relationship with his father.",
+      "quantity": 3
+    },
+    {
+      "image": "https://i.ibb.co/zGcNRXt/F0-C4081165517-ADC6700585-B8174-ABA710-BBFD3-E.jpg",
+      "name": "Becoming",
+      "authorName": "Michelle Obama",
+      "category": "Biographies",
+      "rating": 4.7,
+      "description": " a work of deep reflection and mesmerizing storytelling, Michelle Obama invites readers into her world, chronicling the experiences that have shaped her—from her childhood on the South Side of Chicago to her years as an executive balancing the demands of motherhood and work, to her time spent at the ...",
+      "quantity": 12
+    },
+    {
+      "image": "https://i.ibb.co/TgR1Vqd/1-CBC34-E509-AA7-A82-DF9463547-E9-DA5-F8327-A49-A6.jpg",
+      "name": "Born a Crime: Stories from a South African Childhood",
+      "authorName": "Trevor Noah",
+      "category": "Biographies",
+      "rating": 4.3,
+      "description": "BORN A CRIME is a book of fascinating tales from Noah's youth. He was born and raised in South Africa. Being born half white and half black, the birth of an 'illegal' union, he is born a crime. Noah's stories sketch his life, with his mother, in South Africa",
+      "quantity": 8
+    },
+    {
+      "image": "https://i.ibb.co/Qv42bR5/51mzq-TVGgf-L-SL350.jpg",
+      "name": "Running with Scissors: A Memoir",
+      "authorName": "Augusten Burroughs and Burroughs",
+      "category": "Biographies",
+      "rating": 4.9,
+      "description": "Running with Scissors is the true story of a boy whose mother (a poet with delusions of Anne Sexton) gave him away to be raised by her psychiatrist, a dead-ringer for Santa and a lunatic in the bargain. Suddenly, at age twelve, Augusten Burroughs found himself living in a dilapidated Victorian in perfect squalor.",
+      "quantity": 0
+    },
+    {
+      "image": "https://i.ibb.co/3zHBVfF/210-A338331-B84-AC4103-F9-ED91-FBBAE6-DFF1-EEC9-B.jpg",
+      "name": "Who Is Taylor Swift?",
+      "authorName": "Anderson, Kirsten and Who Hq",
+      "category": "Biographies",
+      "rating": 4.1,
+      "description": "The book tells the story of Swift's rise to fame, from her small-town beginnings in Pennsylvania, to her move to Nashville, to her travels touring around the globe. Along the way, it also tracks her famous albums, lyrics, rumored romances and reported feuds (though there's no more “bad blood” to speak of).",
+      "quantity": 4
+    },
+    {
+      "image": "https://i.ibb.co/kgBJ942/805-FD0-FA737804-DC5-D4-C99-A93-D53505-CC310105-A.jpg",
+      "name": "Homesteader's Kitchen",
+      "authorName": "Robin Burnside and Dashka Slater",
+      "category": "Cooking",
+      "rating": 4.6,
+      "description": "In The Homesteader's Kitchen, author Robin Burnside presents wholesome recipes and motherly advice for preparing nourishing meals, tasty embellishments, and luscious desserts. Her focus is on using fruits and vegetables from the family garden or the nearby farmers market..",
+      "quantity": 15
+    },
+    {
+      "image": "https://i.ibb.co/0hK4zyg/92-C9-CADEA31-B1-B47461102-F361-D17962-DAB5-CA59.jpg",
+      "name": "Everyday Delicious",
+      "authorName": "Rocco DiSpirito",
+      "category": "Cooking",
+      "rating": 4.4,
+      "description": "Finding himself at home more during the pandemic and in the hybrid world that followed, James Beard Award-winning author and chef Rocco DiSpirito rediscovered for the first time in decades the joy of cooking for and savoring weekday...",
+      "quantity": 0
+    },
+    {
+      "image": "https://i.ibb.co/XkX98BX/CF2-A9-D2-A14-E97-D17-A2775223400-EC76-C33-A6845-A.jpg",
+      "name": "Canning and Preserving",
+      "authorName": "BALL",
+      "category": "Cooking",
+      "rating": 4.7,
+      "description": "The Amish are known for their canning practices, which are essential to communities of large families and even larger gardens. Written by Amish writer Laura Anne Lapp, Amish Canning & Preserving offers sixty classic recipes for all varieties of fresh garden-made fruits and vegetables.",
+      "quantity": -3
+    },
+    {
+      "image": "https://i.ibb.co/NpmkLqb/0-AEB98399572120-AEFBB65-EDB37-BE50-F61-E34-E24.jpg",
+      "name": "The Amish Canning Cookbook",
+      "authorName": "Georgia Varozza",
+      "category": "Cooking",
+      "rating": 4.2,
+      "description": "The Homestyle Amish Kitchen Cookbook comes a great new collection of recipes, hints, and Plain wisdom for everyone who loves the idea of preserving fresh, wholesome foods. Whether instructing a beginning canner or helping a seasoned cook hone her skills, certified Master Food Preserver Georgia Varozza shows people how to get the very best out of their food. Here, readers will.",
+      "quantity": -7
+    },
+    {
+      "image": "https://i.ibb.co/WfC4Qh6/BFB02-A3-E0-B65177-E5-C3-F475-DEA20056-B96-AE429-E.jpg",
+      "name": "Oh, the Places You'll Go!",
+      "authorName": "Dr. Seuss",
+      "category": "Entertainment",
+      "rating": 4.8,
+      "description": "Oh, the Places You'll Go! by Dr. Seuss is a classic children's book that also holds valuable life lessons for adults. Through whimsical rhymes and colorful illustrations, it explores the journey of life, the ups and downs, and the endless possibilities that lie ahead.",
+      "quantity": 8
+    },
+    {
+      "image": "https://i.ibb.co/JRSS7b3/A379-DA6-A5-EECE400904-DB2-DA8-F69-CDBA050-E1323.jpg",
+      "name": "Where the Sidewalk Ends: Poems and Drawings",
+      "authorName": "Shel Silverstein",
+      "category": "Entertainment",
+      "rating": 4.5,
+      "description": "Where the Sidewalk Ends is a 1974 children's poetry collection written and illustrated by Shel Silverstein. It was published by Harper and Row Publishers. The book's poems address common childhood concerns and also present fanciful stories and imaginative images.",
+      "quantity": -6
+    },
+    {
+      "image": "https://i.ibb.co/27GPn6c/4-F9-B9608-B93-D098-ED8966-D8-D5848-D3-E41-F220-A32.jpg",
+      "name": "Jamberry Board Book",
+      "authorName": "Bruce Degen",
+      "category": "Entertainment",
+      "rating": 4.6,
+      "description": "Jamberry is a well-illustrated and short hard-board book that definitely was one of my favorite night time stories to read to the kids when they were young (age 3 to 6). Jamberry combines adventurous, whimsical drawings with a story full of rhythm, rhymes, and alliteration.",
+      "quantity": -13
+    },
+    {
+      "image": "https://i.ibb.co/ZSv4wZc/9-E473-DB62-C117-C913521-C9-DA3-DA6-B92-EE362-B7-C9.jpg",
+      "name": "The Indispensable Calvin and Hobbes: A Calvin and Hobbes Treasury Volume 11",
+      "authorName": "Bill Watterson",
+      "category": "Entertainment",
+      "rating": 4.3,
+      "description": "Calvin, the six-year-old dirty tricksmeister and master of indignation and his warm, cuddly philosopher sidekick and Hobbes, a tiger whose idea of adventure is to lie on his back by the fire and have his stomach rubbed. This unlikely due captured the hearts, the minds, and, most of all, the funny bones of America.",
+      "quantity": 14
+    }
+  ]
+  
