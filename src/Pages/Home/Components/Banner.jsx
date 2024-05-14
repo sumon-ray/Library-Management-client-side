@@ -63,8 +63,9 @@ export default function Banner() {
 
 
 // git commit 
-// responsive footer has been added
-// details book page has added for each category book
+// 
+// 
+
 // modal has been added. user can borrow the book now.
 // user can only borrow a single book for one time. this functionality has been added 
 // borrowed book page has been added where user can see their borrowed book list
