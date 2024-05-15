@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -16,38 +17,40 @@ export const UserContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   // console.log(user)
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  )
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [loading, setLoading] = useState(true);
   //registerUser==>
-  const registerUser = (email,password) => {
+  const registerUser = (email, password) => {
     setLoading(true);
-   return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
   // tysylyn@mailinator.com
   //loginUser==>
-  const loginUser = (email,password) => {
+  const loginUser = (email, password) => {
     setLoading(true);
-   return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
   // Google Login ==>
-    const googleProvider = new GoogleAuthProvider();
-// Google Login ==>
-const loginWithGoogle = () => {
-  return signInWithPopup(auth, googleProvider)
-      .then(() => {
-          toast.success('Logged in successfully');
-          // Redirect the user to the home page
-         
-      })
-      .catch((error) => {
-          // Handle errors if any
-          console.error('Google login error:', error.message);
-      });
-};
+  const googleProvider = new GoogleAuthProvider();
+  // Google Login ==>
+  const loginWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const { data } = await axios.post(
+        "https://server-pi-amber.vercel.app/jwt",
+        { email: result?.user?.email },
+        { withCredentials: true }
+      );
+      console.log(data);
+      // setLoading(true)
+      toast.success("Logged in successfully");
+    } catch (error) {
+      // Handle errors if any
+      console.error("Google login error:", error.message);
+    }
+  };
 
-//updateProfile==>
+  //updateProfile==>
   const updateProfile = (name, photo) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
@@ -58,15 +61,21 @@ const loginWithGoogle = () => {
   useEffect(() => {
     const unsubscriber = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       return unsubscriber;
     };
   }, []);
-
+  // rs
   // logOut user==>
-  const logOutUser = () => {
-   return signOut(auth).then(() => {
+  const logOutUser = async () => {
+    // setLoading(true)
+    const { data } = await axios("https://server-pi-amber.vercel.app/logout", {
+      withCredentials: true,
+    });
+    console.log(data);
+    return signOut(auth).then(() => {
       toast.success("Log out successfully");
     });
   };
@@ -81,7 +90,7 @@ const loginWithGoogle = () => {
     logOutUser,
     loginWithGoogle,
     theme,
-    setTheme
+    setTheme,
   };
   return <UserContext.Provider value={info}>{children}</UserContext.Provider>;
 };

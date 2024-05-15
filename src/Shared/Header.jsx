@@ -80,7 +80,7 @@ const Header = () => {
               {navbar}
             </ul>
           </div>
-          <a onClick={()=>navigate('/')} className="btn btn-ghost text-xl"> BookStore </a>
+          <a  onClick={()=>navigate('/')} className="items-center btn btn-ghost text-xl"> <span className=""><img className="w-10 rounded-full h-full " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPfXLK1KjACQYScfqsGQRPhpXhgE0SdvNdSp1jFqxNu4ntvAe-rKZoShi4L_hpxqV6fn4&usqp=CAU" alt="" /></span> Library </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="  px-1"> {navbar} </ul>

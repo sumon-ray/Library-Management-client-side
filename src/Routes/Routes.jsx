@@ -9,7 +9,7 @@ import Error404 from "../Pages/Error404/Error404";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/*",
@@ -33,15 +33,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-book",
-        element: <AddBook />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddBook />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/all-book",
-        element: <AllBooks />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AllBooks />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update/:id",
-        element: <Update />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Update />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://server-pi-amber.vercel.app/singleData/${params.id}`
@@ -50,7 +65,12 @@ const router = createBrowserRouter([
 
       {
         path: "/borrowed-book",
-        element: <BorrowedBooks />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <BorrowedBooks />
+          </PrivateRoute>
+        ),
       },
 
       {

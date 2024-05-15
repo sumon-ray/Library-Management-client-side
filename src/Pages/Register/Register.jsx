@@ -1,8 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import UseAuth from "../../UseAuth/UseAuth";
-import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import UseAuth from "../../UseAuth/UseAuth";
 const Register = () => {
   const { registerUser } = UseAuth();
   const navigate = useNavigate();
@@ -33,7 +34,13 @@ const Register = () => {
     }
 
     try {
-      await registerUser(email, password, userName, photo);
+      const result = await registerUser(email, password, userName, photo);
+      const { data } = await axios.post(
+        "https://server-pi-amber.vercel.app/jwt",
+        { email: result?.user?.email },
+        { withCredentials: true }
+      );
+      console.log(data);
       toast.success("Registered successfully");
       navigate("/");
     } catch (error) {
@@ -48,7 +55,7 @@ const Register = () => {
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
           <form onSubmit={handleSubmit} className="w-full max-w-md">
             <div className="flex justify-center mx-auto">
-          <FaUserCircle className="text-blue-300 size-20 md:size-40" />
+              <FaUserCircle className="text-blue-300 size-20 md:size-40" />
             </div>
 
             <div className="flex items-center justify-center mt-6">
@@ -118,21 +125,19 @@ const Register = () => {
             </div>
 
             {/* Password Error */}
-            {passwordError && (
-              <p className="text-red-500">{passwordError}</p>
-            )}
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
 
             <div className="mt-6">
               <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                 Sign Up
               </button>
 
-              <Link to='/login' className="mt-6 text-center ">
+              <Link to="/login" className="mt-6 text-center ">
                 <a
                   href="#"
                   className="text-sm text-blue-500 hover:underline dark:text-blue-400"
                 >
-                  Already have an account? 
+                  Already have an account?
                 </a>
               </Link>
             </div>

@@ -14,7 +14,7 @@ const AllBooks = () => {
     const getAllData = async () => {
       try {
         const { data } = await axios.get(
-          "https://server-pi-amber.vercel.app/books"
+          "https://server-pi-amber.vercel.app/books",{withCredentials:true}
         );
         setBooks(data);
       } catch (error) {

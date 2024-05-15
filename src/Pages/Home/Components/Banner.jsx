@@ -41,13 +41,13 @@ export default function Banner() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide ><Slider image={image0} text={'only book is your friend '} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image3} text={''} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image4} text={''} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image5} text={''} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image6} text={''} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image2} text={''} />  </SwiperSlide>
-        <SwiperSlide><Slider  image={image2} text={''} />  </SwiperSlide>
+        <SwiperSlide ><Slider image={image0} text={'Welcome to a world of endless possibilities. Welcome to our Library Management System '} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image3} text={'Explore our digital shelves and unlock a universe of knowledge.'} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image4} text={'With user-friendly features and seamless access, finding the perfect book has never been easier. '} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image5} text={'Experience the joy of reading anytime, anywhere.'} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image6} text={'Feel free to adjust and customize the text to better fit the tone and style of your library management website!'} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image2} text={'Search by title, author, or category, and embark on your literary journey in just a few clicks.'} />  </SwiperSlide>
+        <SwiperSlide><Slider  image={image8} text={'Step into a world where imagination knows no bounds.'} />  </SwiperSlide>
 
         
   

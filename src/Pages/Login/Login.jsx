@@ -1,30 +1,36 @@
+import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../UseAuth/UseAuth";
 
 const Login = () => {
-  const { loginWithGoogle, loginUser,theme,setTheme } = UseAuth();
+  const { loginWithGoogle, loginUser, theme, setTheme } = UseAuth();
   const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const location = useLocation()
-  const from = location.state || '/' 
-  
-  const handleLogin = () => {
+  const location = useLocation();
+  const from = location.state || "/";
+
+  const handleLogin = async () => {
     // Get the email and password from the form fields
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     // Call the loginUser function with the email and password
-    loginUser(email, password)
-      .then(() => {
-        toast.success("login successfully");
-        navigate(from,{replace:true});
-      })
-      .catch((error) => {
-        // Handle login error
-        setError(error)
-      });
+    try {
+      const result = loginUser(email, password);
+      const { data } = await axios.post(
+        "https://server-pi-amber.vercel.app/jwt",
+        { email: result?.user?.email },
+        { withCredentials: true }
+      );
+      console.log(data);
+      toast.success("login successfully");
+      navigate(from, { replace: true });
+    } catch (error) {
+      // Handle login error
+      setError(error);
+    }
   };
 
   const handleClick = () => {
@@ -42,16 +48,19 @@ const Login = () => {
 
           <div className="flex flex-col  items-center py-6  lg:flex-row">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-semibold text-gray-100 lg:text-4xl">
-                
-              </h2>
+              <h2 className="text-3xl font-semibold text-gray-100 lg:text-4xl"></h2>
 
               <h3 className="mt-2 text-2xl font-semibold text-gray-100">
                 Hello! <span className="text-blue-400">user</span>
               </h3>
 
               <p className="mt-4 text-gray-100">
-              Authentication is the broader process of verifying a user's identity before granting access to a system or platform. It involves confirming that the user is who they claim to be. This verification can occur through various methods, such as passwords, biometrics, security tokens, or multifactor authentication
+                Authentication is the broader process of verifying a user's
+                identity before granting access to a system or platform. It
+                involves confirming that the user is who they claim to be. This
+                verification can occur through various methods, such as
+                passwords, biometrics, security tokens, or multifactor
+                authentication
               </p>
             </div>
 
@@ -66,14 +75,17 @@ const Login = () => {
                     <h2 className="dark:text-gray-100 mb-3 text-3xl font-semibold text-center">
                       Login to your account
                     </h2>
-                    <Link to='/register' className="flex gap-3  text-sm text-center  dark:text-gray-100">
+                    <Link
+                      to="/register"
+                      className="flex gap-3  text-sm text-center  dark:text-gray-100"
+                    >
                       Don't have an account?
-                      <a 
+                      <a
                         href="#"
                         rel="noopener noreferrer"
                         className="focus:underline underline text-blue-600 "
                       >
-                         Sign up here
+                        Sign up here
                       </a>
                     </Link>
                     <div className="my-6 space-y-4">
@@ -101,7 +113,10 @@ const Login = () => {
                     <form noValidate="" action="" className="space-y-8">
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <label htmlFor="email" className="dark:text-gray-100 block text-sm">
+                          <label
+                            htmlFor="email"
+                            className="dark:text-gray-100 block text-sm"
+                          >
                             Email address
                           </label>
                           <input
@@ -114,7 +129,10 @@ const Login = () => {
                         </div>
                         <div className="space-y-2">
                           <div className="flex justify-between">
-                            <label htmlFor="password" className="dark:text-gray-100 text-sm">
+                            <label
+                              htmlFor="password"
+                              className="dark:text-gray-100 text-sm"
+                            >
                               Password
                             </label>
                             <a

@@ -1,6 +1,7 @@
 import {Navigate,useLocation} from 'react-router-dom'
 import UseAuth from '../UseAuth/UseAuth';
-
+import { Audio } from 'react-loader-spinner'
+// eslint-disable-next-line react/prop-types
 const PrivateRoute = ({children}) => {
     const{user,loading} = UseAuth();
     const location = useLocation()
@@ -11,7 +12,15 @@ const PrivateRoute = ({children}) => {
     //     return <Navigate to='/login' state={location?.pathname || '/'} />
     
 
-    if(loading) return <p>loading...</p> 
+    if(loading) return <Audio
+    height="80"
+    width="80"
+    radius="9"
+    color="green"
+    ariaLabel="loading"
+    wrapperStyle
+    wrapperClass
+  />
     if(user) return children
     return <Navigate to={'/login'} state={location.pathname} replace={true} />
 

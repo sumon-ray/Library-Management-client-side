@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
-import UseAuth from "../../UseAuth/UseAuth";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import UseAuth from "../../UseAuth/UseAuth";
 
 const CategoryBookDetails = () => {
   const { user } = UseAuth();
@@ -51,12 +51,11 @@ const CategoryBookDetails = () => {
       Swal.fire({
         title: "Good job!",
         text: "Book borrowed successfully",
-        icon: "success"
+        icon: "success",
       });
       closeModal();
     } catch (error) {
       toast.error("You have already borrowed this book.");
-     
     }
   };
   return (
@@ -65,7 +64,7 @@ const CategoryBookDetails = () => {
         <div className="flex items-center">
           <span className="mb-0 capitalize dark:text-gray-800">{category}</span>
         </div>
-        <a href="#">See All</a>
+        <Link >See All</Link>
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
@@ -74,7 +73,7 @@ const CategoryBookDetails = () => {
             className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
           />
           <div className="flex items-center text-xs">
-            <span>6 min ago</span>
+            {/* <span>6 min ago</span> */}
           </div>
         </div>
         <div className="space-y-2">
@@ -82,7 +81,7 @@ const CategoryBookDetails = () => {
             <h3 className="text-xl font-semibold dark:text-violet-600">
               {name}
             </h3>
-            <h1 className="text-xl font-bold">{authorName}</h1>
+            <h1 className="text-xl font-bold">By: {authorName}</h1>
           </a>
           <p className="leading-snug dark:text-gray-600">{description}</p>
           <button onClick={openModal} className="btn flex mx-auto">
@@ -122,7 +121,7 @@ const CategoryBookDetails = () => {
                 <input
                   type="email"
                   id="email"
-                  defaultValue={user?.email || 'no user'}
+                  defaultValue={user?.email || "no user"}
                   name="borrowerEmail"
                   className="text-white   mt-1 p-2 w-full border rounded-md"
                   required

@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import UseAuth from "../../UseAuth/UseAuth";
 import BorrowBooksDetails from "./BorrowBooksDetails";
-import Swal from "sweetalert2";
 
 const BorrowedBooks = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
-
   const handleDelete = async (id) => {
     try {
       await axios.delete(`https://server-pi-amber.vercel.app/borrow/${id}`);
@@ -15,7 +14,7 @@ const BorrowedBooks = () => {
       Swal.fire({
         title: "Good job!",
         text: " Book returned successfully",
-        icon: "success"
+        icon: "success",
       });
     } catch (error) {
       console.error("Error deleting book:", error);
@@ -24,19 +23,22 @@ const BorrowedBooks = () => {
 
   const { user } = UseAuth();
   useEffect(() => {
-    const getAllData = async () => {
-      const { data } = await axios(
-        `https://server-pi-amber.vercel.app/borrow/${user?.email}`
-      );
-      setBorrowedBooks(data);
-    };
-    getAllData();
+    if (user?.email) {
+      const getAllData = async () => {
+        const { data } = await axios(
+          `https://server-pi-amber.vercel.app/borrow/${user?.email}`,
+          { withCredentials: true }
+        );
+        setBorrowedBooks(data);
+      };
+      getAllData();
+    }
   }, [user]);
 
   return (
     <div>
-      Total Books: {borrowedBooks.length}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <p className="text-lg text-center my-3">Total Books: {borrowedBooks.length}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 mb-6 gap-6">
         {borrowedBooks.map((item) => (
           <BorrowBooksDetails
             handleDelete={handleDelete}

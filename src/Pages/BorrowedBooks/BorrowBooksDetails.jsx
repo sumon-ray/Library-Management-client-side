@@ -1,14 +1,11 @@
-import axios from 'axios';
-import React from 'react';
+
 import { Link } from 'react-router-dom';
-
 const BorrowBooksDetails = ({ item,handleDelete }) => {
-    const { image, name, authorName, description, category, _id,bookId } = item;
-
-    // console.log(item._id)
+    const { image, name, authorName, description, category, _id,bookId,returnDate } = item;
+    console.log(returnDate)
 
     return (
-        <div className="rounded-lg overflow-hidden shadow-xl dark:bg-gray-800">
+        <div className="rounded-lg overflow-hidden shadow-xl  dark:bg-gray-800">
             <div className="mt-4 mx-auto text-center">
                 <span className="inline-block px-3 py-1 leading-none bg-blue-200 text-blue-800 rounded-full">{item?.category}</span>
             </div>
@@ -27,7 +24,7 @@ const BorrowBooksDetails = ({ item,handleDelete }) => {
             </div>
         </div>
     );
-};
+};    
   
 export default BorrowBooksDetails;
 
