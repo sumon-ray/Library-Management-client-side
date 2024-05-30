@@ -19,8 +19,8 @@ const TableBooks = ({ books }) => {
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Name</th>
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Author Name</th>
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Category</th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Description</th>
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Rating</th>
+                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Update</th>
                         {/* <th scope="col" className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th> */}
                     </tr>
                 </thead>

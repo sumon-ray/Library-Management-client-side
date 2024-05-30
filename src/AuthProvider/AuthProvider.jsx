@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
   // console.log(user)
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [loading, setLoading] = useState(true);
+
   //registerUser==>
   const registerUser = (email, password) => {
     setLoading(true);

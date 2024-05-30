@@ -30,12 +30,10 @@ const AddBook = () => {
       rating,
       category,
     };
-    console.log(info);
-    const { data } = await axios.post(
-      "https://server-pi-amber.vercel.app/books",
-      info,{withCredentials:true}
-    );
-    // console.log(data);
+
+    await axios.post("https://server-pi-amber.vercel.app/books", info, {
+      withCredentials: true,
+    });
     Swal.fire({
       title: "Good job!",
       text: "This book has been successfully added",
@@ -48,9 +46,7 @@ const AddBook = () => {
       <div className="max-w-screen-xl screen">
         <section
           className={`${
-            theme === "light"
-              ? "bg-slate-900 bg-opacity-60 text-slate-600"
-              : "dracula"
+            theme === "light" ? "bg-gray-600  text-slate-600" : "dracula"
           } my-8 max-w-4xl shadow-md shadow-slate-500 p-6 mx-auto rounded-md border-2 border-slate-600`}
         >
           <h2 className="text-2xl font-semibold text-gray-700  capitalize dark:text-white text-center mb-12 ">
@@ -88,6 +84,7 @@ const AddBook = () => {
                   name="name"
                   id="emailAddress"
                   type="text"
+                  required
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
@@ -104,6 +101,7 @@ const AddBook = () => {
                   name="quantity"
                   id="password"
                   type="number"
+                  required
                   className=" block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
@@ -120,6 +118,7 @@ const AddBook = () => {
                   name="authorName"
                   id="authorName"
                   type="text"
+                  required
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
@@ -134,13 +133,19 @@ const AddBook = () => {
                 <select
                   name="category"
                   id="category"
-                  className="block px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  className="block px-4 py-2 text-slate-500 w-full mt-2  bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   value={category}
                   onChange={handleCategoryChange}
                 >
-                  <option value="Arts & Music">Arts & Music</option>
-                  <option value="Biographies">Biographies</option>
-                  <option value="Cooking">Cooking</option>
+                  <option className="text-slate-500" value="Arts & Music">
+                    Arts & Music
+                  </option>
+                  <option className="text-slate-500" value="Biographies">
+                    Biographies
+                  </option>
+                  <option className="text-slate-500" value="Cooking">
+                    Cooking
+                  </option>
                 </select>
               </div>
 
@@ -155,6 +160,7 @@ const AddBook = () => {
                   placeholder="write details of the book"
                   name="description"
                   id="description"
+                  required
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
@@ -173,13 +179,14 @@ const AddBook = () => {
                   type="number"
                   min="0"
                   max="5"
+                  required
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
             </div>
 
             <div className="flex justify-end mt-6">
-              <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 btn ">
+              <button className="px-8 py-2.5 leading-5 shadow-md text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 btn ">
                 Add Book
               </button>
             </div>

@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+// **********************************************
 import AllBookDetails from "./AllBookDetails";
 import TableBooks from "./TableBooks";
 import ViewOptions from "./ViewOptions";
+// **********************************************
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -14,7 +16,10 @@ const AllBooks = () => {
     const getAllData = async () => {
       try {
         const { data } = await axios.get(
-          "https://server-pi-amber.vercel.app/books",{withCredentials:true}
+          "https://server-pi-amber.vercel.app/books",
+          {
+            withCredentials: true,
+          }
         );
         setBooks(data);
       } catch (error) {
@@ -27,6 +32,8 @@ const AllBooks = () => {
   const handleViewChange = (option) => {
     setView(option);
   };
+
+  // Filter function
 
   // ********************************************
   const handleToggleAvailable = () => {

@@ -12,7 +12,7 @@ const CategoryBooks = ({ bookData }) => {
           <span className="flex-grow inline-block text-center w-35 mb-4 mx-auto px-3 py-1 leading-none bg-blue-200 text-blue-800 rounded-full">{category}</span>
   <img className="flex-grow  w-full h-72  mx-auto " src={image} alt={name} />
   </div>
-      <div className="flex-col ">
+      <div className="flex-col  px-2">
         <h2 className="flex-grow text-2xl font-bold dark:text-gray-400 text-black mt-3">  {name.substring(0,30)}</h2>
         <p className="mb-5 flex-grow text-sm font-medium text-gray-950 dark:text-gray-400">By: {authorName}</p>
       

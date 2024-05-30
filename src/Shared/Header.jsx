@@ -4,7 +4,7 @@ import UseAuth from "../UseAuth/UseAuth";
 
 const Header = () => {
   const { user, logOutUser,theme,setTheme } = UseAuth();
-  
+  const navigate = useNavigate()
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -13,7 +13,7 @@ const Header = () => {
   const handleChange = (e) => {
     setTheme(e.target.checked ? "dracula" : "light");
   };
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const [showName, setShowName] = useState(false);
 
   const handleMouseEnter = () => {
@@ -24,7 +24,11 @@ const Header = () => {
     setShowName(false);
   };
 // -------------------------------------------------------------
-
+  
+const handleLogOut = ()=>{
+  logOutUser()
+  navigate('/login')
+}
 
   const navbar = (
     <>
@@ -134,7 +138,7 @@ const Header = () => {
                   )}
                 </div>
 
-                <button className="btn-ghost btn btn-success" onClick={logOutUser}>
+                <button className="btn-ghost btn btn-success" onClick={handleLogOut}>
                   {" "}
                   log Out
                 </button>

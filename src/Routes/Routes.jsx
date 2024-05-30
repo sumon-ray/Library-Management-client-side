@@ -75,7 +75,11 @@ const router = createBrowserRouter([
 
       {
         path: "/details/:id",
-        element: <CategoryBookDetails />,
+        element: (
+          <PrivateRoute>
+            <CategoryBookDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://server-pi-amber.vercel.app/singleData/${params.id}`

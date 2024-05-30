@@ -6,11 +6,12 @@ import Swal from "sweetalert2";
 import UseAuth from "../../UseAuth/UseAuth";
 
 const CategoryBookDetails = () => {
-  const { user } = UseAuth();
+  const { user, theme } = UseAuth();
   // console.log(user)
   const loader = useLoaderData();
   const { _id, image, name, authorName, description, category } = loader;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // console.log(name)
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -59,12 +60,12 @@ const CategoryBookDetails = () => {
     }
   };
   return (
-    <div className="max-w-lg mx-auto my-6 p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
+    <div className="max-w-lg mx-auto my-6 p-4 shadow-md shadow-slate-600 ">
       <div className="flex justify-between pb-4 border-b">
         <div className="flex items-center">
-          <span className="mb-0 capitalize dark:text-gray-800">{category}</span>
+          <span className="mb-0 capitalize ">{category}</span>
         </div>
-        <Link >See All</Link>
+        <Link>See All</Link>
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
@@ -83,16 +84,27 @@ const CategoryBookDetails = () => {
             </h3>
             <h1 className="text-xl font-bold">By: {authorName}</h1>
           </a>
-          <p className="leading-snug dark:text-gray-600">{description}</p>
-          <button onClick={openModal} className="btn flex mx-auto">
+          <p className="leading-snug ">{description}</p>
+          <button
+            onClick={openModal}
+            className="btn btn-primary text-white flex mx-auto"
+          >
             Borrow
           </button>
         </div>
       </div>
       {/* Borrow Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
-          <div className="bg-white p-8 rounded-md shadow-md w-96">
+        <div
+          className={`${
+            theme == "light" ? "backdrop-blur-xl" : "backdrop-blur-lg"
+          } fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50`}
+        >
+          <div
+            className={`${
+              theme == "light" ? "bg-zinc-100 text-black" : "bg-slate-700 "
+            } p-8 rounded-md shadow-md w-96`}
+          >
             <h2 className="text-xl font-semibold mb-4">Borrow Book</h2>
             <form onSubmit={handleBorrow}>
               <div className="mb-4">
@@ -107,7 +119,9 @@ const CategoryBookDetails = () => {
                   id="name"
                   defaultValue={user?.displayName}
                   name="borrowerName"
-                  className="text-white mt-1 p-2 w-full border rounded-md"
+                  className={` mt-1 text-zinc-300  p-2 w-full border rounded-md  input input-ghost shadow-md ${
+                    theme == "light" ? "text-slate-800" : ""
+                  }`}
                   required
                 />
               </div>
@@ -123,22 +137,25 @@ const CategoryBookDetails = () => {
                   id="email"
                   defaultValue={user?.email || "no user"}
                   name="borrowerEmail"
-                  className="text-white   mt-1 p-2 w-full border rounded-md"
+                  className={`text-zinc-300 input input-ghost shadow-md mt-1 p-2 w-full border rounded-md ${
+                    theme == "light" ? "text-slate-800" : ""
+                  }`}
                   required
                 />
               </div>
               <div className="mb-4">
-                <label
-                  htmlFor="return"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="return" className="block text-sm font-medium ">
                   Returne
                 </label>
                 <input
                   type="date"
                   id="return"
                   name="return"
-                  className="text-white mt-1 p-2 w-full border rounded-md"
+                  required
+                  placeholder="place return date "
+                  className={`text-zinc-300 ${
+                    theme == "light" ? "text-slate-800" : ""
+                  } shadow-md input input-ghost mt-1 p-2 w-full border rounded-md`}
                 />
               </div>
               <div className="flex items-center justify-between">
